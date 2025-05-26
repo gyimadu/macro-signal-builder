@@ -7,7 +7,7 @@ FRED_API_KEY = "8fb8b73af03b928be5c33de5d75f7720"
 fred = Fred(api_key=FRED_API_KEY)
 
 series_dict = {
-    'gdp': 'GDP',
+    'gdp': 'GDPC1',
     'cpi': 'CPIAUCSL',
     'unemployment': 'UNRATE',
     'fedFunds': 'FEDFUNDS',
@@ -21,15 +21,25 @@ for series_name, series_code in series_dict.items():
 
 prices_dict = {
     'spy': 'SPY',
+    'qqq': 'QQQ',
     'tlt': 'TLT',
     'gld': 'GLD',
     'hyg': 'HYG',
     'uup': 'UUP',
 }
 
-for price_name, price_code in prices_dict.items():
-    data = yf.download(price_code, start='2005-05-20', end='2025-05-20', interval='1mo')
+adj_close_data = []
+
+for price_name, ticker in prices_dict.items():
+    data = yf.download(ticker, start='1995-01-01', interval='1mo', auto_adjust=False)
+    adj = data[['Adj Close']].rename(columns={'Adj Close': price_name})
+    adj_close_data.append(adj)
     data.to_csv(f'../data/prices/{price_name}.csv')
+
+adj_close_df = pd.concat(adj_close_data, axis=1)
+adj_close_df.to_csv(f'../data/prices/adj_close.csv')
+
+
 
 
 
