@@ -1,0 +1,314 @@
+/* Minimal Dashboard Design */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 280px;
+    background: white;
+    border-right: 1px solid #e9ecef;
+    padding: 0;
+    box-shadow: 2px 0 4px rgba(0,0,0,0.1);
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    padding: 20px;
+    border-bottom: 1px solid #e9ecef;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.sidebar-header h4 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.sidebar-content {
+    padding: 20px;
+}
+
+.sidebar-section {
+    margin-bottom: 30px;
+}
+
+.sidebar-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 8px;
+}
+
+/* Regime Indicator */
+.regime-indicator {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Indicator Items */
+.indicator-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f3f4;
+}
+
+.indicator-item:last-child {
+    border-bottom: none;
+}
+
+.indicator-label {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.indicator-value {
+    font-weight: 600;
+    color: #333;
+    font-size: 1rem;
+}
+
+/* Signal Items */
+.signal-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f3f4;
+}
+
+.signal-item:last-child {
+    border-bottom: none;
+}
+
+.signal-label {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.signal-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.signal-badge.buy {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.signal-badge.sell {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.signal-badge.hold {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.update-time {
+    font-size: 0.85rem;
+    color: #6c757d;
+    text-align: center;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 6px;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    margin-left: 280px;
+    padding: 30px;
+    background: #f8f9fa;
+}
+
+.content-header {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.content-header h2 {
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    color: #333;
+}
+
+.content-header p {
+    margin: 0;
+    color: #6c757d;
+}
+
+/* Content Sections */
+.content-section {
+    background: white;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.content-section h4 {
+    margin: 0 0 20px 0;
+    font-weight: 600;
+    color: #333;
+    font-size: 1.3rem;
+}
+
+/* Charts Section */
+.charts-section {
+    background: white;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.charts-section h4 {
+    margin: 0 0 30px 0;
+    font-weight: 600;
+    color: #333;
+    font-size: 1.3rem;
+}
+
+.chart-container {
+    margin-bottom: 40px;
+}
+
+.chart-container:last-child {
+    margin-bottom: 0;
+}
+
+.chart-container h5 {
+    margin: 0 0 20px 0;
+    font-weight: 600;
+    color: #495057;
+    font-size: 1.1rem;
+}
+
+.chart-container canvas {
+    max-height: 400px;
+}
+
+/* Tables */
+.table {
+    margin: 0;
+}
+
+.table th {
+    border-top: none;
+    font-weight: 600;
+    color: #495057;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.table td {
+    vertical-align: middle;
+    font-size: 0.9rem;
+}
+
+.positive-return {
+    color: #28a745;
+    font-weight: 600;
+}
+
+.negative-return {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+    }
+    
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+    
+    .dashboard-container {
+        flex-direction: column;
+    }
+}
+
+/* Loading Animation */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Fade In Animation */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Regime Change Highlight */
+.regime-change {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+}
+
+/* Hover Effects */
+.table-hover tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.indicator-item:hover,
+.signal-item:hover {
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+} 
